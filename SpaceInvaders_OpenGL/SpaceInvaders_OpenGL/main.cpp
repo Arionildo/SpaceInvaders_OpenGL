@@ -18,6 +18,8 @@ int main(int argc, char **argv)
 	glutCreateWindow("Space Invaders");
 	glutFullScreen();
 
+	//Teste Commit01
+
 	// Dispara a "maquina de estados" de OpenGL
 	glutMainLoop();
 }
