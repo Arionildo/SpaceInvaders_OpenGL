@@ -16,7 +16,6 @@ int main(int argc, char **argv)
 	glutInitWindowPosition(250, 50);
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Space Invaders");
-	glutFullScreen();
 
 	//Teste Commit01
 
