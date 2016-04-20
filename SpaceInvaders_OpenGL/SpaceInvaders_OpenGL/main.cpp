@@ -7,6 +7,32 @@
 */
 #include "GL\glew.h"
 #include "GL\freeglut.h"
+#include "Inimigo.h"
+
+Inimigo inimigo;
+
+void DesenhaCena() {
+	// Limpa a janela com a cor especificada como cor de fundo
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	inimigo.Desenha();
+
+	glutSwapBuffers();
+}
+
+void Visualizacao() {
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+	///Params
+	///xMin, xMax, yMin, yMax;
+	gluOrtho2D(-5.0, 5.0, -5.0, 5.0);
+}
+
+void Inicio() {
+	glClearColor(1.0, 1.0, 0.0, 1.0);
+	Visualizacao();
+}
 
 int main(int argc, char **argv)
 {
@@ -17,7 +43,8 @@ int main(int argc, char **argv)
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Space Invaders");
 
-	//Teste Commit01
+	glutDisplayFunc(DesenhaCena);
+	Inicio();
 
 	// Dispara a "maquina de estados" de OpenGL
 	glutMainLoop();
