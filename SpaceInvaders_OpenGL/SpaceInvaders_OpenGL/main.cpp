@@ -5,8 +5,6 @@
 	@author		Arionildo Escouto e Leonardo Schmitt
 	@version	1.0 12/04/16
 */
-#include "GL\glew.h"
-#include "GL\freeglut.h"
 #include "Inimigo.h"
 
 Inimigo inimigo;

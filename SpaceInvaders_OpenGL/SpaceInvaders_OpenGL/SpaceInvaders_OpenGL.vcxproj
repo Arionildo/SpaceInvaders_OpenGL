@@ -71,6 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\ARI\Source\Repos\SpaceInvaders_OpenGL\SpaceInvaders_OpenGL\packages\nupengl.core.0.1.0.1\build\native\include\GL;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\ARI\Source\Repos\SpaceInvaders_OpenGL\SpaceInvaders_OpenGL\packages\nupengl.core.0.1.0.1\build\native\include\GL;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -146,14 +148,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Inimigo.cpp" />
+    <ClCompile Include="Jogador.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inimigo.h" />
+    <ClInclude Include="Jogador.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
