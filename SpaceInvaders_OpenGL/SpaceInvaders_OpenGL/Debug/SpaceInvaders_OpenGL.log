@@ -1,1 +1,13 @@
-﻿  SpaceInvaders_OpenGL.vcxproj -> C:\Users\ARI\Source\Repos\SpaceInvaders_OpenGL\SpaceInvaders_OpenGL\Debug\SpaceInvaders_OpenGL.exe
+﻿  main.cpp
+c:\users\ari\documents\visual studio 2015\projects\spaceinvaders_opengl\spaceinvaders_opengl\spaceinvaders_opengl\inimigo.h(22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\ari\documents\visual studio 2015\projects\spaceinvaders_opengl\spaceinvaders_opengl\spaceinvaders_opengl\inimigo.h(23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\ari\documents\visual studio 2015\projects\spaceinvaders_opengl\spaceinvaders_opengl\spaceinvaders_opengl\inimigo.h(24): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\ari\documents\visual studio 2015\projects\spaceinvaders_opengl\spaceinvaders_opengl\spaceinvaders_opengl\inimigo.h(25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  Jogador.cpp
+  Inimigo.cpp
+c:\users\ari\documents\visual studio 2015\projects\spaceinvaders_opengl\spaceinvaders_opengl\spaceinvaders_opengl\inimigo.h(22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\ari\documents\visual studio 2015\projects\spaceinvaders_opengl\spaceinvaders_opengl\spaceinvaders_opengl\inimigo.h(23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\ari\documents\visual studio 2015\projects\spaceinvaders_opengl\spaceinvaders_opengl\spaceinvaders_opengl\inimigo.h(24): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\ari\documents\visual studio 2015\projects\spaceinvaders_opengl\spaceinvaders_opengl\spaceinvaders_opengl\inimigo.h(25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  Generating Code...
+  SpaceInvaders_OpenGL.vcxproj -> C:\Users\ARI\Documents\Visual Studio 2015\Projects\SpaceInvaders_OpenGL\SpaceInvaders_OpenGL\Debug\SpaceInvaders_OpenGL.exe
