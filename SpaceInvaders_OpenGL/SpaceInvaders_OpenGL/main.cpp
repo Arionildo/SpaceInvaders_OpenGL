@@ -6,14 +6,37 @@
 	@version	1.0 12/04/16
 */
 #include "Inimigo.h"
+#include "Jogador.h"
 
 Inimigo inimigo;
+Jogador jogador;
+
+void ComandosJogador(int tecla, int x, int y) {
+	//if e else encadeados para testar a variavel tecla
+	if (tecla == GLUT_KEY_RIGHT) {
+		jogador.setPosicaoX(0.1f);
+	}
+	else if (tecla == GLUT_KEY_LEFT) {
+		jogador.setPosicaoX(-0.1f);
+	}
+	/*else if (tecla == GLUT_KEY_PAGE_UP) {
+		carro.setLibrasNoPneu(0.1f);
+	}
+	else if (tecla == GLUT_KEY_PAGE_DOWN) {
+		carro.setLibrasNoPneu(-0.1f);
+	}*/
+
+
+	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis
+	glutPostRedisplay();
+}
 
 void DesenhaCena() {
 	// Limpa a janela com a cor especificada como cor de fundo
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	inimigo.Desenha();
+	jogador.Desenha();
 
 	glutSwapBuffers();
 }
@@ -41,6 +64,7 @@ int main(int argc, char **argv)
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Space Invaders");
 
+	glutSpecialFunc(ComandosJogador);
 	glutDisplayFunc(DesenhaCena);
 	Inicio();
 

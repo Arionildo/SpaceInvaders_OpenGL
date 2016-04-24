@@ -4,7 +4,7 @@
 
 Inimigo::Inimigo()
 {
-	transXQ1 = transYQ1 = sentidoX = sentidoY = 0;
+	posicaoX = posicaoY = sentidoX = sentidoY = 0;
 }
 
 

@@ -8,7 +8,7 @@
 class Inimigo
 {
 private:
-	float transXQ1, transYQ1;
+	float posicaoX, posicaoY;
 	float sentidoX, sentidoY;
 	
 public:
@@ -17,30 +17,30 @@ public:
 	~Inimigo();
 
 	void Desenha() {
-		glColor3f(0.0, 0.0, 1.0);
+		glColor3f(1.0, 0.0, 0.0);
 		glBegin(GL_QUADS);
-		glVertex2f(-0.5 + transXQ1, -5.0 + transYQ1);
-		glVertex2f(-0.5 + transXQ1, -4.0 + transYQ1);
-		glVertex2f(0.5 + transXQ1, -4.0 + transYQ1);
-		glVertex2f(0.5 + transXQ1, -5.0 + transYQ1);
+		glVertex2f(-0.5 + posicaoX,  5.0 + posicaoY);
+		glVertex2f(-0.5 + posicaoX, 4.0 + posicaoY);
+		glVertex2f(0.5 + posicaoX, 4.0 + posicaoY);
+		glVertex2f(0.5 + posicaoX, 5.0 + posicaoY);
 		glEnd();
 	}
 
 	//Getters e Setters
-	float getTransXQ1() {
-		return this->transXQ1;
+	float getPosicaoX() {
+		return this->posicaoX;
 	}
 
-	float getTransYQ1() {
-		return this->transYQ1;
+	float getPosicaoY() {
+		return this->posicaoY;
 	}
 
 	void setTransXQ1(float tx) {
-		transXQ1 += tx;
+		posicaoX += tx;
 	}
 
 	void setTransYQ1(float ty) {
-		transYQ1 += ty;
+		posicaoY += ty;
 	}
 
 	float getSentidoX() {
