@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+/SpaceInvaders_OpenGL/.vs/SpaceInvaders_OpenGL/v14
+*.sdf
+*.suo
+*.db
+*.opendb
+*.user
