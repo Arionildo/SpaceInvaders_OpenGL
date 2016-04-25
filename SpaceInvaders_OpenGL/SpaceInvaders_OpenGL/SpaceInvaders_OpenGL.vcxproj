@@ -151,10 +151,14 @@
     <ClCompile Include="Inimigo.cpp" />
     <ClCompile Include="Jogador.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Personagem.cpp" />
+    <ClCompile Include="Tiro.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Jogador.h" />
+    <ClInclude Include="Personagem.h" />
+    <ClInclude Include="Tiro.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

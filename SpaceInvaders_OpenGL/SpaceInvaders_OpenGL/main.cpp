@@ -15,8 +15,7 @@ void ComandosJogador(int tecla, int x, int y) {
 	//if e else encadeados para testar a variavel tecla
 	if (tecla == GLUT_KEY_RIGHT) {
 		jogador.setPosicaoX(0.1f);
-	}
-	else if (tecla == GLUT_KEY_LEFT) {
+	} else if (tecla == GLUT_KEY_LEFT) {
 		jogador.setPosicaoX(-0.1f);
 	}
 	/*else if (tecla == GLUT_KEY_PAGE_UP) {
