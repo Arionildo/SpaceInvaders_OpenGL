@@ -14,9 +14,9 @@ void Inimigo::Desenha()
 {
 	glColor3f(1.0, 0.0, 0.0);
 	glBegin(GL_QUADS);
-	glVertex2f(-0.5 + getPosicaoX(), 5.0 + getPosicaoY());
-	glVertex2f(-0.5 + getPosicaoX(), 4.0 + getPosicaoY());
-	glVertex2f(0.5 + getPosicaoX(), 4.0 + getPosicaoY());
-	glVertex2f(0.5 + getPosicaoX(), 5.0 + getPosicaoY());
+	glVertex2f(-0.5 + getPosicaoX(), 5.0 + getPosicaoY()); //Inferior Esquerdo
+	glVertex2f(-0.5 + getPosicaoX(), 4.0 + getPosicaoY()); //Superior Esquerdo
+	glVertex2f(0.5 + getPosicaoX(), 4.0 + getPosicaoY());  //Superior Direito
+	glVertex2f(0.5 + getPosicaoX(), 5.0 + getPosicaoY());  //Inferior Direito
 	glEnd();
 }

@@ -7,9 +7,14 @@
 */
 #include "Inimigo.h"
 #include "Jogador.h"
+#include "Tiro.h"
+#include <iostream>
+#include <stdio.h>
+using namespace std;
 
 Inimigo inimigo;
 Jogador jogador;
+Tiro tiro;
 
 void ComandosJogador(int tecla, int x, int y) {
 	//if e else encadeados para testar a variavel tecla
@@ -25,6 +30,10 @@ void ComandosJogador(int tecla, int x, int y) {
 		carro.setLibrasNoPneu(-0.1f);
 	}*/
 
+	if (tecla == GLUT_KEY_F1) {
+		tiro.setAtirando(true);
+		tiro.setPosicaoY(-0.2);
+	}
 
 	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis
 	glutPostRedisplay();
@@ -37,7 +46,13 @@ void DesenhaCena() {
 	inimigo.Desenha();
 	jogador.Desenha();
 
+	if (tiro.getAtirando()) {
+		tiro.Desenha();
+	}
+
 	glutSwapBuffers();
+	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis
+	glutPostRedisplay();
 }
 
 void Visualizacao() {
