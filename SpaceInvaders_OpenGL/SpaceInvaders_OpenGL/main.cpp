@@ -26,7 +26,7 @@ void ComandosJogador(int tecla, int x, int y) {
 
 	if (tecla == GLUT_KEY_F1) {
 		tiro.setAtirando(true);
-		tiro.Spawn(jogador);
+		tiro.CriarTiro(jogador);
 	}
 
 	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis

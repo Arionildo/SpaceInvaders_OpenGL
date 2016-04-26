@@ -20,15 +20,15 @@ void Tiro::Desenha()
 
 	setPosicaoY(getPosicaoY() + 0.01);
 
-	if (isDead()) setAtirando(false);
+	if (isDistante()) setAtirando(false);
 }
 
-bool Tiro::isDead() {
+bool Tiro::isDistante() {
 	return  getPosicaoX() > 5.0 || getPosicaoX() < -5.0 ||
 			getPosicaoY() > 5.0 || getPosicaoY() < -5.0;
 }
 
-void Tiro::Spawn(Nave nave) {
+void Tiro::CriarTiro(Nave nave) {
 	setPosicaoX(nave.getPosicaoX());
 	setPosicaoY(nave.getPosicaoY());
 }

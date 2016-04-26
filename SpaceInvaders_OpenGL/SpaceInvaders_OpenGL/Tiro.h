@@ -14,9 +14,9 @@ public:
 
 	void Desenha();
 
-	void Spawn(Nave nave);
+	void CriarTiro(Nave nave);
 
-	bool isDead();
+	bool isDistante();
 
 	//Getters e Setters
 	float getTamanho();
