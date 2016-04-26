@@ -3,12 +3,18 @@
 float posicaoX, posicaoY;
 float sentidoX, sentidoY;
 
+Nave::Nave() {
+}
+
+void Nave::Desenha() {
+}
+
 //Getters e Setters
-float getPosicaoX() {
+float Nave::getPosicaoX() {
 	return posicaoX;
 }
 
-float getPosicaoY() {
+float Nave::getPosicaoY() {
 	return posicaoY;
 }
 
@@ -16,22 +22,22 @@ void Nave::setPosicaoX(float tx) {
 	posicaoX += tx;
 }
 
-void setPosicaoY(float ty) {
+void Nave::setPosicaoY(float ty) {
 	posicaoY += ty;
 }
 
-float getSentidoX() {
+float Nave::getSentidoX() {
 	return sentidoX;
 }
 
-float getSentidoY() {
+float Nave::getSentidoY() {
 	return sentidoY;
 }
 
-void setSentidoX(float sx) {
+void Nave::setSentidoX(float sx) {
 	sentidoX *= sx;
 }
 
-void setSentidoY(float sy) {
+void Nave::setSentidoY(float sy) {
 	sentidoY *= sy;
 }

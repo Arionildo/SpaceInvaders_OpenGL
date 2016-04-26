@@ -1,3 +1,4 @@
+#pragma once
 #include "Jogador.h"
 #include "Nave.h"
 
@@ -9,12 +10,12 @@ Jogador::Jogador()
 	setSentidoY(0);
 }
 
-void Nave::Desenha() {
+void Jogador::Desenha() {
 	glColor3f(0.0, 0.0, 1.0);
 	glBegin(GL_QUADS);
-	glVertex2f(-0.5 + getPosicaoX(), 5.0 + getPosicaoY());
-	glVertex2f(-0.5 + getPosicaoX(), 4.0 + getPosicaoY());
-	glVertex2f(0.5 + getPosicaoX(), 4.0 + getPosicaoY());
-	glVertex2f(0.5 + getPosicaoX(), 5.0 + getPosicaoY());
+	glVertex2f(-0.5 + getPosicaoX(), -5.0 + getPosicaoY());
+	glVertex2f(-0.5 + getPosicaoX(), -4.0 + getPosicaoY());
+	glVertex2f(0.5 + getPosicaoX(), -4.0 + getPosicaoY());
+	glVertex2f(0.5 + getPosicaoX(), -5.0 + getPosicaoY());
 	glEnd();
 }

@@ -17,7 +17,7 @@ public:
 
 	float getPosicaoY();
 
-	void Nave::setPosicaoX(float tx);
+	void setPosicaoX(float tx);
 
 	void setPosicaoY(float ty);
 
