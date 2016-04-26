@@ -8,8 +8,13 @@
 
 class Inimigo : public Nave
 {
+private:
+	int aux_random;
+	float deslocamento;
+
 public:
 	Inimigo();
 	void Desenha() override;
+	void Movimentacao();
 };
 #endif // ! INIMIGO_H_INCLUDED

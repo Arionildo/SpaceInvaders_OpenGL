@@ -16,19 +16,25 @@ Inimigo inimigo;
 Jogador jogador;
 Tiro tiro;
 
+
+void DrawPontos()
+{
+
+}
+
 void ComandosJogador(int tecla, int x, int y) {
 	//if e else encadeados para testar a variavel tecla
 	if (tecla == GLUT_KEY_RIGHT) {
-		jogador.setPosicaoX(0.1f);
+		jogador.setPosicaoX(0.2f);
 	} else if (tecla == GLUT_KEY_LEFT) {
-		jogador.setPosicaoX(-0.1f);
+		jogador.setPosicaoX(-0.2f);
 	}
 
-	if (tecla == GLUT_KEY_F1) {
+	if ((tecla == GLUT_KEY_UP) && tiro.getAtirando() == false) {
 		tiro.setAtirando(true);
 		tiro.CriarTiro(jogador);
 	}
-
+	
 	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis
 	glutPostRedisplay();
 }
@@ -44,6 +50,8 @@ void DesenhaCena() {
 		tiro.Desenha();
 	}
 
+	tiro.colisao(inimigo);
+	
 	glutSwapBuffers();
 	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis
 	glutPostRedisplay();

@@ -2,17 +2,23 @@
 #include "GL\glew.h"
 #include "GL\freeglut.h"
 #include "Nave.h"
+#include "Inimigo.h"
 
 class Tiro
 {
 private:
 	float posicaoX, posicaoY;
 	float tamanho;
-	bool atirando;
+	float posicaoRand;
+	float temporizador;
+	int aux_rand;
+	bool atirando, colidiu;
 public:
 	Tiro();
 
 	void Desenha();
+
+	void colisao(Inimigo &inimigo);
 
 	void CriarTiro(Nave nave);
 

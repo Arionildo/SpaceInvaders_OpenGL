@@ -37,6 +37,10 @@ void Nave::setPosicaoY(float ty) {
 	posicaoY += ty;
 }
 
+void Nave::ResetPosicaoY() {
+	posicaoY = 4.5;
+}
+
 float Nave::getSentidoX() {
 	return sentidoX;
 }

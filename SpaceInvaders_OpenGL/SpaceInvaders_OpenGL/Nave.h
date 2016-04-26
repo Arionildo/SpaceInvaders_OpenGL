@@ -23,6 +23,7 @@ public:
 	void setPosicaoX(float tx);
 
 	void setPosicaoY(float ty);
+	void ResetPosicaoY();
 
 	float getSentidoX();
 
