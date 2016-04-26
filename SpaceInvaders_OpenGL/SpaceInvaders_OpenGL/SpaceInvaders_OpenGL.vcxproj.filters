@@ -27,7 +27,7 @@
     <ClCompile Include="Tiro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Personagem.cpp">
+    <ClCompile Include="Nave.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="Tiro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Personagem.h">
+    <ClInclude Include="Nave.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

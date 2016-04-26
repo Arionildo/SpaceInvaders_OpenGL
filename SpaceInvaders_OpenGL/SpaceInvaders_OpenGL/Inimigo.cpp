@@ -1,21 +1,22 @@
 #pragma once
 #include "Inimigo.h"
-#include "Personagem.h"
-
-float posicaoX, posicaoY;
-float sentidoX, sentidoY;
+#include "Nave.h"
 
 Inimigo::Inimigo()
 {
-	posicaoX = posicaoY = sentidoX = sentidoY = 0;
+	setPosicaoX(0);
+	setPosicaoY(0);
+	setSentidoX(0);
+	setSentidoY(0);
 }
 
-void Personagem::Desenha() {
+void Inimigo::Desenha()
+{
 	glColor3f(1.0, 0.0, 0.0);
 	glBegin(GL_QUADS);
-	glVertex2f(-0.5 + posicaoX, 5.0 + posicaoY);
-	glVertex2f(-0.5 + posicaoX, 4.0 + posicaoY);
-	glVertex2f(0.5 + posicaoX, 4.0 + posicaoY);
-	glVertex2f(0.5 + posicaoX, 5.0 + posicaoY);
+	glVertex2f(-0.5 + getPosicaoX(), 5.0 + getPosicaoY());
+	glVertex2f(-0.5 + getPosicaoX(), 4.0 + getPosicaoY());
+	glVertex2f(0.5 + getPosicaoX(), 4.0 + getPosicaoY());
+	glVertex2f(0.5 + getPosicaoX(), 5.0 + getPosicaoY());
 	glEnd();
 }

@@ -2,22 +2,22 @@
 #include <iostream>
 using namespace std;
 
-class Personagem
+class Nave
 {
 private:
 	float posicaoX, posicaoY;
 	float sentidoX, sentidoY;
 public:
-	Personagem();
+	Nave();
 
-	void Desenha();
+	virtual void Desenha();
 
 	//Getters e Setters
 	float getPosicaoX();
 
 	float getPosicaoY();
 
-	void Personagem::setPosicaoX(float tx);
+	void Nave::setPosicaoX(float tx);
 
 	void setPosicaoY(float ty);
 

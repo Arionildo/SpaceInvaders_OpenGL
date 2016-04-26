@@ -1,19 +1,20 @@
 #include "Jogador.h"
-#include "Personagem.h"
-
-float posicaoX, posicaoY;
-float sentidoX, sentidoY;
+#include "Nave.h"
 
 Jogador::Jogador()
 {
+	setPosicaoX(0);
+	setPosicaoY(0);
+	setSentidoX(0);
+	setSentidoY(0);
 }
 
-void Personagem::Desenha() {
+void Nave::Desenha() {
 	glColor3f(0.0, 0.0, 1.0);
 	glBegin(GL_QUADS);
-	glVertex2f(-0.5 + posicaoX, 5.0 + posicaoY);
-	glVertex2f(-0.5 + posicaoX, 4.0 + posicaoY);
-	glVertex2f(0.5 + posicaoX, 4.0 + posicaoY);
-	glVertex2f(0.5 + posicaoX, 5.0 + posicaoY);
+	glVertex2f(-0.5 + getPosicaoX(), 5.0 + getPosicaoY());
+	glVertex2f(-0.5 + getPosicaoX(), 4.0 + getPosicaoY());
+	glVertex2f(0.5 + getPosicaoX(), 4.0 + getPosicaoY());
+	glVertex2f(0.5 + getPosicaoX(), 5.0 + getPosicaoY());
 	glEnd();
 }

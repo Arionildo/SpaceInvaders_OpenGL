@@ -1,4 +1,4 @@
-#include "Personagem.h"
+#include "Nave.h"
 
 float posicaoX, posicaoY;
 float sentidoX, sentidoY;
@@ -12,7 +12,7 @@ float getPosicaoY() {
 	return posicaoY;
 }
 
-void Personagem::setPosicaoX(float tx) {
+void Nave::setPosicaoX(float tx) {
 	posicaoX += tx;
 }
 
