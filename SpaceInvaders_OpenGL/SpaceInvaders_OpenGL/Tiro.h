@@ -1,18 +1,28 @@
 #pragma once
 #include "GL\glew.h"
 #include "GL\freeglut.h"
+#include "Nave.h"
 
 class Tiro
 {
 private:
 	float posicaoX, posicaoY;
+	float tamanho;
 	bool atirando;
 public:
 	Tiro();
 
 	void Desenha();
 
+	void Spawn(Nave nave);
+
+	bool isDead();
+
 	//Getters e Setters
+	float getTamanho();
+
+	void setTamanho(float t);
+
 	float getPosicaoX();
 
 	float getPosicaoY();

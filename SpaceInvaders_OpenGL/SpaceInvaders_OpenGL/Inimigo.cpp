@@ -5,18 +5,19 @@
 Inimigo::Inimigo()
 {
 	setPosicaoX(0);
-	setPosicaoY(0);
+	setPosicaoY(4.5);
 	setSentidoX(0);
 	setSentidoY(0);
+	setTamanho(0.5);
 }
 
 void Inimigo::Desenha()
 {
 	glColor3f(1.0, 0.0, 0.0);
 	glBegin(GL_QUADS);
-	glVertex2f(-0.5 + getPosicaoX(), 5.0 + getPosicaoY()); //Inferior Esquerdo
-	glVertex2f(-0.5 + getPosicaoX(), 4.0 + getPosicaoY()); //Superior Esquerdo
-	glVertex2f(0.5 + getPosicaoX(), 4.0 + getPosicaoY());  //Superior Direito
-	glVertex2f(0.5 + getPosicaoX(), 5.0 + getPosicaoY());  //Inferior Direito
+	glVertex2f(-getTamanho() + getPosicaoX(), -getTamanho() + getPosicaoY()); //Inferior Esquerdo
+	glVertex2f(-getTamanho() + getPosicaoX(), getTamanho() + getPosicaoY()); //Superior Esquerdo
+	glVertex2f(getTamanho() + getPosicaoX(), getTamanho() + getPosicaoY());  //Superior Direito
+	glVertex2f(getTamanho() + getPosicaoX(), -getTamanho() + getPosicaoY());  //Inferior Direito
 	glEnd();
 }

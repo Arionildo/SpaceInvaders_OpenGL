@@ -2,11 +2,22 @@
 
 float posicaoX, posicaoY;
 float sentidoX, sentidoY;
+float tamanho;
 
 Nave::Nave() {
 }
 
 void Nave::Desenha() {
+}
+
+float Nave::getTamanho()
+{
+	return tamanho;
+}
+
+void Nave::setTamanho(float t)
+{
+	tamanho = t;
 }
 
 //Getters e Setters

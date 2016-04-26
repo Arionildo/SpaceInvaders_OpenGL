@@ -5,22 +5,45 @@ Tiro::Tiro()
 {
 	setPosicaoX(0);
 	setPosicaoY(0);
+	setTamanho(0.1);
 }
 
 void Tiro::Desenha()
 {
 	glColor3f(0.0, 0.0, 1.0);
 	glBegin(GL_QUADS);
-	glVertex2f(-0.1 + getPosicaoX(), -0.2 + getPosicaoY()); //Inferior Esquerdo
-	glVertex2f(-0.1 + getPosicaoX(), 0.2 + getPosicaoY()); //Superior Esquerdo
-	glVertex2f(0.1 + getPosicaoX(), 0.2 + getPosicaoY());  //Superior Direito
-	glVertex2f(0.1 + getPosicaoX(), -0.2 + getPosicaoY());  //Inferior Direito
+	glVertex2f(-getTamanho() + getPosicaoX(), -getTamanho() + getPosicaoY()); //Inferior Esquerdo
+	glVertex2f(-getTamanho() + getPosicaoX(), getTamanho() + getPosicaoY()); //Superior Esquerdo
+	glVertex2f(getTamanho() + getPosicaoX(), getTamanho() + getPosicaoY());  //Superior Direito
+	glVertex2f(getTamanho() + getPosicaoX(), -getTamanho() + getPosicaoY());  //Inferior Direito
 	glEnd();
 
 	setPosicaoY(getPosicaoY() + 0.01);
+
+	if (isDead()) setAtirando(false);
+}
+
+bool Tiro::isDead() {
+	return  getPosicaoX() > 5.0 || getPosicaoX() < -5.0 ||
+			getPosicaoY() > 5.0 || getPosicaoY() < -5.0;
+}
+
+void Tiro::Spawn(Nave nave) {
+	setPosicaoX(nave.getPosicaoX());
+	setPosicaoY(nave.getPosicaoY());
 }
 
 //Getters e Setters
+float Tiro::getTamanho()
+{
+	return tamanho;
+}
+
+void Tiro::setTamanho(float t)
+{
+	tamanho = t;
+}
+
 float Tiro::getPosicaoX() {
 	return posicaoX;
 }

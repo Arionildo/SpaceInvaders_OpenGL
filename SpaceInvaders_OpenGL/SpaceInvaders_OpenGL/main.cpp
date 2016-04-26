@@ -23,16 +23,10 @@ void ComandosJogador(int tecla, int x, int y) {
 	} else if (tecla == GLUT_KEY_LEFT) {
 		jogador.setPosicaoX(-0.1f);
 	}
-	/*else if (tecla == GLUT_KEY_PAGE_UP) {
-		carro.setLibrasNoPneu(0.1f);
-	}
-	else if (tecla == GLUT_KEY_PAGE_DOWN) {
-		carro.setLibrasNoPneu(-0.1f);
-	}*/
 
 	if (tecla == GLUT_KEY_F1) {
 		tiro.setAtirando(true);
-		tiro.setPosicaoY(-0.2);
+		tiro.Spawn(jogador);
 	}
 
 	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis

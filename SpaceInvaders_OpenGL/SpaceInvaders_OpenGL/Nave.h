@@ -5,12 +5,17 @@ class Nave
 private:
 	float posicaoX, posicaoY;
 	float sentidoX, sentidoY;
+	float tamanho;
 public:
 	Nave();
 
 	virtual void Desenha();
 
 	//Getters e Setters
+	float getTamanho();
+
+	void setTamanho(float t);
+
 	float getPosicaoX();
 
 	float getPosicaoY();
