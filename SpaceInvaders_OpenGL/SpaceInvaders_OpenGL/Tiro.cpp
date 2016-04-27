@@ -11,21 +11,44 @@ Tiro::Tiro()
 	setTamanho(0.1);	
 }
 
-void Tiro::Colisao(Inimigo &inimigo)
-{					
-	if (-inimigo.getTamanho() + inimigo.getPosicaoX() <= getTamanho() + getPosicaoX() &&
-		inimigo.getTamanho() + inimigo.getPosicaoX() >= -getTamanho() + getPosicaoX() &&
-		-inimigo.getTamanho() + inimigo.getPosicaoY() <= getTamanho() + getPosicaoY() &&
-		getAtirando() == true)
-	{				
-		setAtirando(false);
-		colidiu = true;
-	}	
-
-	if (colidiu)
+void Tiro::Colisao(Inimigo &inimigo, Jogador &jogador)
+{				
+	if (_playerAtirando)
+	{
+		if (-inimigo.getTamanho() + inimigo.getPosicaoX() <= getTamanho() + getPosicaoX() &&
+			inimigo.getTamanho() + inimigo.getPosicaoX() >= -getTamanho() + getPosicaoX() &&
+			-inimigo.getTamanho() + inimigo.getPosicaoY() <= getTamanho() + getPosicaoY() &&
+			getAtirando() == true)
+		{
+			setAtirando(false);
+			colidiu = true;
+		}
+	}
+		
+	else if(_inimigoAtirando)
+	{
+		if (-jogador.getTamanho() + jogador.getPosicaoX() <= getTamanho() + getPosicaoX() &&
+			jogador.getTamanho() + jogador.getPosicaoX() >= -getTamanho() + getPosicaoX() &&
+			jogador.getTamanho() + jogador.getPosicaoY() >= -getTamanho() + getPosicaoY() &&
+			getAtirando() == true)
+		{
+			setAtirando(false);
+			colidiu = true;
+		}
+	}
+	
+	if (colidiu && _playerAtirando)
 	{
 		inimigo.Spawn(colidiu);
+		//_playerAtirando = false;
 	}
+
+	if (colidiu && _inimigoAtirando)
+	{
+		jogador.setVida(jogador.getVida() - 1);
+		setInimigoAtirando(false);
+	}
+
 }
 
 void Tiro::Desenha()
@@ -38,10 +61,20 @@ void Tiro::Desenha()
 	glVertex2f(getTamanho() + getPosicaoX(), -getTamanho() + getPosicaoY());  //Inferior Direito
 	glEnd();
 
-	setPosicaoY(getPosicaoY() + 0.003);
+	if (_playerAtirando)
+	{		
+		setPosicaoY(getPosicaoY() + 0.003);
+	}
+	
+	else if(_inimigoAtirando)
+	{
+		setPosicaoY(getPosicaoY() - 0.003);
+	}
+
 
 	if (isDistante()) setAtirando(false);	
 }
+
 
 bool Tiro::isDistante() {
 	return  getPosicaoX() > 5.0 || getPosicaoX() < -5.0 ||
@@ -54,6 +87,16 @@ void Tiro::CriarTiro(Nave nave) {
 }
 
 //Getters e Setters
+void Tiro::setInimigoAtirando(bool inimigo)
+{
+	_inimigoAtirando = inimigo;
+}
+
+void Tiro::setPlayerAtirando(bool player)
+{
+	_playerAtirando = player;
+}
+
 float Tiro::getTamanho()
 {
 	return tamanho;

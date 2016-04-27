@@ -16,14 +16,18 @@ private:
 	int auxRand, auxMovimentacao;
 	float deslocamento, temporizador, posicaoRand;
 	static bool reset;
-	bool limite_mapa;
+	bool limite_mapa, atirando;
 	
 	
 
 public:
 	Inimigo();
 	void Desenha() override;
-	void Movimentacao();
+	void MovimentacaoAcao();
 	void Spawn(bool &colidiu);
+	
+	//get and set pro atirando
+	void setAtirando(bool &_atirando);
+	bool getAtirando();
 };
 #endif // ! INIMIGO_H_INCLUDED

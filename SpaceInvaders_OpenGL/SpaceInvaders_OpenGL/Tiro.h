@@ -3,6 +3,7 @@
 #include "GL\freeglut.h"
 #include "Nave.h"
 #include "Inimigo.h"
+#include "Jogador.h"
 
 class Tiro
 {
@@ -11,20 +12,24 @@ private:
 	float tamanho;
 	float posicaoRand;
 	float temporizador;
+	float velocidade;
 	int aux_rand;
-	bool atirando, colidiu;
+	bool atirando, colidiu, _playerAtirando, _inimigoAtirando;
 public:
 	Tiro();
 
 	void Desenha();
 
-	void Colisao(Inimigo &inimigo);
+	void Colisao(Inimigo &inimigo, Jogador &jogador);
 
 	void CriarTiro(Nave nave);
 
 	bool isDistante();
 
 	//Getters e Setters
+	void setInimigoAtirando(bool inimigo);
+	void setPlayerAtirando(bool player);
+
 	float getTamanho();
 
 	void setTamanho(float t);

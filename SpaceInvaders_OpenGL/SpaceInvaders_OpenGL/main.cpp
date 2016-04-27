@@ -14,13 +14,10 @@ using namespace std;
 
 Inimigo inimigo;
 Jogador jogador;
-Tiro tiro;
-
-
-void DrawPontos()
-{
-
-}
+Tiro tiroPlayer;
+Tiro tiroInimigo;
+//bool playerAtirando;
+//bool inimigoAtirando;
 
 void ComandosJogador(int tecla, int x, int y) {
 	//if e else encadeados para testar a variavel tecla
@@ -30,9 +27,9 @@ void ComandosJogador(int tecla, int x, int y) {
 		jogador.setPosicaoX(-0.2f);
 	}
 
-	if ((tecla == GLUT_KEY_UP) && tiro.getAtirando() == false) {
-		tiro.setAtirando(true);
-		tiro.CriarTiro(jogador);
+	if ((tecla == GLUT_KEY_UP) && tiroPlayer.getAtirando() == false) {
+		tiroPlayer.setAtirando(true);
+		tiroPlayer.CriarTiro(jogador);
 	}
 	
 	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis
@@ -43,16 +40,36 @@ void DesenhaCena() {
 	// Limpa a janela com a cor especificada como cor de fundo
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	if (inimigo.getAtirando()) {
+		tiroInimigo.setAtirando(true);
+		tiroInimigo.CriarTiro(inimigo);
+	}
+		
+	if (tiroPlayer.getAtirando()) {
+		tiroPlayer.setPlayerAtirando(true);
+		tiroPlayer.setInimigoAtirando(false);
+		tiroPlayer.Desenha();
+	}
+	
+	if (tiroInimigo.getAtirando()) {
+		tiroInimigo.setInimigoAtirando(true);
+		tiroInimigo.setPlayerAtirando(false);
+		tiroInimigo.Desenha();
+	}
+
+	//instancia do tiro do player
+	tiroPlayer.Colisao(inimigo, jogador);
+	
+	//instancia do tiro do inimigo
+	tiroInimigo.Colisao(inimigo, jogador);
+	
+	//colisao da nave inimiga com a do jogador
+	jogador.Colisao(inimigo);
+	
+	
 	inimigo.Desenha();
 	jogador.Desenha();
 
-	if (tiro.getAtirando()) {
-		tiro.Desenha();
-	}
-
-	tiro.Colisao(inimigo);
-	jogador.Colisao(inimigo);
-	
 	glutSwapBuffers();
 	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis
 	glutPostRedisplay();

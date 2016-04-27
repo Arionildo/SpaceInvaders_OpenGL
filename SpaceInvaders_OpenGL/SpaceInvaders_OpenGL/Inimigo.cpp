@@ -16,8 +16,20 @@ Inimigo::Inimigo()
 
 bool Inimigo::reset = false;
 
-void Inimigo::Movimentacao()
+
+//get and set pro atirando
+bool Inimigo::getAtirando() {
+	return atirando;
+}
+
+void Inimigo::setAtirando(bool &_atirando) {
+	atirando = _atirando;
+}
+
+
+void Inimigo::MovimentacaoAcao()
 {
+	//teste para movimentar o inimigo
 	srand(time(NULL));
 	auxMovimentacao = rand() % 2;
 
@@ -33,6 +45,21 @@ void Inimigo::Movimentacao()
 		setPosicaoX(deslocamento);
 	}
 	setPosicaoY(-0.0003);
+	
+
+	//teste para inimigo atirar...
+	srand(time(NULL));
+	auxRand = rand() % 2;
+	
+	if (auxRand == 0)
+	{
+		atirando = true;
+	}
+
+	else
+	{
+		atirando = false;
+	}
 }
 
 void Inimigo::Spawn(bool &colidiu)
@@ -56,6 +83,9 @@ void Inimigo::Spawn(bool &colidiu)
 			auxRand = (rand() % 10 + 1) - 11;
 		}
 
+		posicaoRand = (float)auxRand / 10;
+
+
 		setTamanho(0.0);
 		setPosicaoInicialX(posicaoRand);
 		setPosicaoX(posicaoRand);
@@ -74,6 +104,7 @@ void Inimigo::Spawn(bool &colidiu)
 	else
 	{
 		temporizador += 1;
+		atirando = false;
 	}
 }
 
@@ -89,7 +120,7 @@ void Inimigo::Desenha()
 		Spawn(limite_mapa);
 	}
 
-	Movimentacao();
+	MovimentacaoAcao();
 
 	glColor3f(1.0, 0.0, 0.0);
 	glBegin(GL_QUADS);
