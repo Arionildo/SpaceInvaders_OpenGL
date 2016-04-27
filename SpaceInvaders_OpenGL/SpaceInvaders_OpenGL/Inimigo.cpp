@@ -1,8 +1,8 @@
 #pragma once
 #include "Inimigo.h"
-#include "Nave.h"
-#include <ctime>
-#include <cstdlib>
+
+
+using namespace std;
 
 Inimigo::Inimigo()
 {
@@ -10,18 +10,21 @@ Inimigo::Inimigo()
 	setPosicaoY(4.5);
 	setSentidoX(0);
 	setSentidoY(0);
-	setTamanho(0.5);
+	setTamanho(0.3);
+	reset = false;
 }
+
+bool Inimigo::reset = false;
 
 void Inimigo::Movimentacao()
 {
 	srand(time(NULL));
-	aux_random = rand() % 2;
+	auxMovimentacao = rand() % 2;
 
-	if (aux_random == 0)
+	if (auxMovimentacao == 0)
 	{
-		 deslocamento = 0.0002;
-		 setPosicaoX(deslocamento);
+		deslocamento = 0.0002;
+		setPosicaoX(deslocamento);
 	}
 
 	else
@@ -30,11 +33,62 @@ void Inimigo::Movimentacao()
 		setPosicaoX(deslocamento);
 	}
 	setPosicaoY(-0.0003);
+}
 
+void Inimigo::Spawn(bool &colidiu)
+{
+	reset = false;
+
+	if (!reset)
+	{
+		srand(time(NULL));
+		auxRand = rand() % 2;
+
+		if (auxRand == 0)
+		{
+			srand(time(NULL));
+			auxRand = rand() % 10 + 1;
+		}
+
+		else
+		{
+			srand(time(NULL));
+			auxRand = (rand() % 10 + 1) - 11;
+		}
+
+		setTamanho(0.0);
+		setPosicaoInicialX(posicaoRand);
+		setPosicaoX(posicaoRand);
+		setPosicaoY();
+		reset = true;
+	}
+
+	if (temporizador > 1500.0)
+	{
+		temporizador = 0.0;
+		setTamanho(0.3);
+		colidiu = false;
+		limite_mapa = false;
+	}
+
+	else
+	{
+		temporizador += 1;
+	}
 }
 
 void Inimigo::Desenha()
-{	
+{
+	if (getPosicaoY() < -5.4)
+	{
+		limite_mapa = true;
+	}
+
+	if (limite_mapa == true)
+	{
+		Spawn(limite_mapa);
+	}
+
 	Movimentacao();
 
 	glColor3f(1.0, 0.0, 0.0);

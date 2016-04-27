@@ -3,9 +3,13 @@
 float posicaoX, posicaoY;
 float sentidoX, sentidoY;
 float tamanho;
+float velocidadeMov;
+int	Vida;
 
 Nave::Nave() {
 }
+
+//Getters e Setters
 
 void Nave::Desenha() {
 }
@@ -20,7 +24,16 @@ void Nave::setTamanho(float t)
 	tamanho = t;
 }
 
-//Getters e Setters
+int Nave::getVida()
+{
+	return Vida;
+}
+
+void Nave::setVida(int vida)
+{
+	Vida = vida;
+}
+
 float Nave::getPosicaoX() {
 	return posicaoX;
 }
@@ -33,11 +46,15 @@ void Nave::setPosicaoX(float tx) {
 	posicaoX += tx;
 }
 
+void Nave::setPosicaoInicialX(float spawn) {
+	posicaoX = spawn;
+}
+
 void Nave::setPosicaoY(float ty) {
 	posicaoY += ty;
 }
 
-void Nave::ResetPosicaoY() {
+void Nave::setPosicaoY() {
 	posicaoY = 4.5;
 }
 

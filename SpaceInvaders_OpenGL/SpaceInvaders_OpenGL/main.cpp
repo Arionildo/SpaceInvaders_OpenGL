@@ -50,7 +50,8 @@ void DesenhaCena() {
 		tiro.Desenha();
 	}
 
-	tiro.colisao(inimigo);
+	tiro.Colisao(inimigo);
+	jogador.Colisao(inimigo);
 	
 	glutSwapBuffers();
 	//função que solicita o redesenho da DesenhaCena, incorporando as modificações de variáveis
@@ -58,7 +59,7 @@ void DesenhaCena() {
 }
 
 void Visualizacao() {
-	glMatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_PROJECTION);	
 	glLoadIdentity();
 
 	///Params
@@ -67,7 +68,7 @@ void Visualizacao() {
 }
 
 void Inicio() {
-	glClearColor(1.0, 1.0, 0.0, 1.0);
+	glClearColor(0.0, 0.0, 0.0, 0.0);
 	Visualizacao();
 }
 

@@ -18,7 +18,7 @@ public:
 
 	void Desenha();
 
-	void colisao(Inimigo &inimigo);
+	void Colisao(Inimigo &inimigo);
 
 	void CriarTiro(Nave nave);
 

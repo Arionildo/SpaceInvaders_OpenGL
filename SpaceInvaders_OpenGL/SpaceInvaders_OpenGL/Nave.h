@@ -16,14 +16,16 @@ public:
 
 	void setTamanho(float t);
 
+	int getVida();	
+	void setVida(int vida);
+	
 	float getPosicaoX();
+	void setPosicaoX(float tx);
+	void setPosicaoInicialX(float spawn);
 
 	float getPosicaoY();
-
-	void setPosicaoX(float tx);
-
 	void setPosicaoY(float ty);
-	void ResetPosicaoY();
+	void setPosicaoY();
 
 	float getSentidoX();
 
