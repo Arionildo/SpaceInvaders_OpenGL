@@ -13,6 +13,7 @@ private:
 	float posicaoRand;
 	float temporizador;
 	float velocidade;
+	float pontos;
 	int aux_rand;
 	bool atirando, colidiu, _playerAtirando, _inimigoAtirando;
 public:
@@ -47,5 +48,8 @@ public:
 	bool getAtirando();
 	
 	void setAtirando(bool status);
+
+	int getPontos();
+	void setPontos(float _pontos);
 };
 

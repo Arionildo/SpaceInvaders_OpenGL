@@ -30,6 +30,12 @@
     <ClCompile Include="Nave.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EstadosJogo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TelaJogo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inimigo.h">
@@ -42,6 +48,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Nave.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TelaJogo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EstadosJogo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

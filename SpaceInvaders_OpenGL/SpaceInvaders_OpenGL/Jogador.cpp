@@ -18,7 +18,7 @@ struct QuadradoVida
 {
 private:
 	float tamanho = 0.15,
-		posicaoX = -4.5,
+		posicaoX = -3.8,
 		posicaoY = (4.6);
 
 public:

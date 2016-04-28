@@ -14,7 +14,7 @@ class Inimigo : public Nave
 {
 private:
 	int auxRand, auxMovimentacao;
-	float deslocamento, temporizador, posicaoRand;
+	float deslocamento, temporizador, posicaoRand, timer;
 	static bool reset;
 	bool limite_mapa, atirando;
 	

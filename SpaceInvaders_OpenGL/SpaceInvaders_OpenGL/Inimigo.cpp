@@ -11,6 +11,7 @@ Inimigo::Inimigo()
 	setSentidoX(0);
 	setSentidoY(0);
 	setTamanho(0.3);
+	timer = 0;
 	reset = false;
 }
 
@@ -46,7 +47,7 @@ void Inimigo::MovimentacaoAcao()
 	}
 	setPosicaoY(-0.0003);
 	
-	if (getTamanho() >= 0.3 && getTamanho() <= 0.35)
+	if (getTamanho() >= 0.3 && getTamanho() <= 0.35 && timer > 1900.0)
 	{
 		//teste para inimigo atirar...
 		srand(time(NULL));
@@ -59,9 +60,15 @@ void Inimigo::MovimentacaoAcao()
 
 		else
 		{
+			timer = 0;
 			atirando = false;
 		}
+		
 	}	
+	else
+	{
+		timer++;
+	}
 }
 
 void Inimigo::Spawn(bool &colidiu)

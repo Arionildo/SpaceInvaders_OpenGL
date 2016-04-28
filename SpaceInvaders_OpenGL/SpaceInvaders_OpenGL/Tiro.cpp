@@ -22,6 +22,7 @@ void Tiro::Colisao(Inimigo &inimigo, Jogador &jogador)
 		{
 			setAtirando(false);
 			colidiu = true;
+			pontos = pontos + 1;
 		}
 	}
 		
@@ -30,7 +31,7 @@ void Tiro::Colisao(Inimigo &inimigo, Jogador &jogador)
 		if (-jogador.getTamanho() + jogador.getPosicaoX() <= getTamanho() + getPosicaoX() &&
 			jogador.getTamanho() + jogador.getPosicaoX() >= -getTamanho() + getPosicaoX() &&
 			jogador.getTamanho() + jogador.getPosicaoY() >= -getTamanho() + getPosicaoY() &&
-			getAtirando() == true)
+			getAtirando() == true && colidiu == false)
 		{
 			setAtirando(false);
 			colidiu = true;
@@ -43,22 +44,22 @@ void Tiro::Colisao(Inimigo &inimigo, Jogador &jogador)
 		//_playerAtirando = false;
 	}
 
-	if (colidiu && _inimigoAtirando)
+	if (!getAtirando() && _inimigoAtirando && colidiu)
 	{
+		jogador.setVida(jogador.getVida() - 1);
 		setInimigoAtirando(false);
+		colidiu = false;
 	}
-
-	if (!getInimigoAtirando() && colidiu)
-	{
-		jogador.setVida(jogador.getVida() -1);
-		//colidiu = false;
-	}
-
 }
 
 void Tiro::Desenha()
 {
-	glColor3f(0.0, 0.0, 1.0);
+	if(_playerAtirando)
+	glColor3f(0.0, 1.0, 1.0);
+
+	if (_inimigoAtirando)
+		glColor3f(1.0, 0.0, 1.0);
+	
 	glBegin(GL_QUADS);
 	glVertex2f(-getTamanho() + getPosicaoX(), -getTamanho() + getPosicaoY()); //Inferior Esquerdo
 	glVertex2f(-getTamanho() + getPosicaoX(), getTamanho() + getPosicaoY()); //Superior Esquerdo
@@ -68,12 +69,12 @@ void Tiro::Desenha()
 
 	if (_playerAtirando)
 	{		
-		setPosicaoY(getPosicaoY() + 0.003);
+		setPosicaoY(getPosicaoY() + 0.0025);
 	}
 	
 	else if(_inimigoAtirando)
 	{
-		setPosicaoY(getPosicaoY() - 0.003);
+		setPosicaoY(getPosicaoY() - 0.0025);
 	}
 
 
@@ -136,6 +137,15 @@ void Tiro::setPosicaoY(float ty) {
 bool Tiro::getAtirando()
 {
 	return atirando;
+}
+
+void Tiro::setPontos(float _pontos) {
+	pontos = _pontos;
+}
+
+int Tiro::getPontos()
+{
+	return pontos;
 }
 
 void Tiro::setAtirando(bool status) {
