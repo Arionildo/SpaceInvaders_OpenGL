@@ -46,20 +46,22 @@ void Inimigo::MovimentacaoAcao()
 	}
 	setPosicaoY(-0.0003);
 	
-
-	//teste para inimigo atirar...
-	srand(time(NULL));
-	auxRand = rand() % 2;
-	
-	if (auxRand == 0)
+	if (getTamanho() >= 0.3 && getTamanho() <= 0.35)
 	{
-		atirando = true;
-	}
+		//teste para inimigo atirar...
+		srand(time(NULL));
+		auxRand = rand() % 2;
 
-	else
-	{
-		atirando = false;
-	}
+		if (auxRand == 0 && atirando == false)
+		{
+			atirando = true;
+		}
+
+		else
+		{
+			atirando = false;
+		}
+	}	
 }
 
 void Inimigo::Spawn(bool &colidiu)
@@ -104,7 +106,7 @@ void Inimigo::Spawn(bool &colidiu)
 	else
 	{
 		temporizador += 1;
-		atirando = false;
+		
 	}
 }
 
@@ -129,4 +131,5 @@ void Inimigo::Desenha()
 	glVertex2f(getTamanho() + getPosicaoX(), getTamanho() + getPosicaoY());  //Superior Direito
 	glVertex2f(getTamanho() + getPosicaoX(), -getTamanho() + getPosicaoY());  //Inferior Direito
 	glEnd();
+
 }

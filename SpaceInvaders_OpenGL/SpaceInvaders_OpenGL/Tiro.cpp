@@ -45,8 +45,13 @@ void Tiro::Colisao(Inimigo &inimigo, Jogador &jogador)
 
 	if (colidiu && _inimigoAtirando)
 	{
-		jogador.setVida(jogador.getVida() - 1);
 		setInimigoAtirando(false);
+	}
+
+	if (!getInimigoAtirando() && colidiu)
+	{
+		jogador.setVida(jogador.getVida() -1);
+		//colidiu = false;
 	}
 
 }
@@ -90,6 +95,11 @@ void Tiro::CriarTiro(Nave nave) {
 void Tiro::setInimigoAtirando(bool inimigo)
 {
 	_inimigoAtirando = inimigo;
+}
+
+bool Tiro::getInimigoAtirando()
+{
+	return _inimigoAtirando;
 }
 
 void Tiro::setPlayerAtirando(bool player)

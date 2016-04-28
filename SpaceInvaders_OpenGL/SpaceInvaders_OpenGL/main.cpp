@@ -40,7 +40,7 @@ void DesenhaCena() {
 	// Limpa a janela com a cor especificada como cor de fundo
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	if (inimigo.getAtirando()) {
+	if (inimigo.getAtirando() && tiroInimigo.getAtirando() == false) {
 		tiroInimigo.setAtirando(true);
 		tiroInimigo.CriarTiro(inimigo);
 	}
