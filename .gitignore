@@ -31,3 +31,5 @@
 *.user
 /SpaceInvaders_OpenGL/SpaceInvaders_OpenGL/x64/Debug/SpaceInv.E7DFBD85.tlog/unsuccessfulbuild
 /SpaceInvaders_OpenGL/SpaceInvaders_OpenGL/Debug/SpaceInv.E7DFBD85.tlog
+SpaceInvaders_OpenGL/Debug/
+SpaceInvaders_OpenGL/SpaceInvaders_OpenGL/Debug/
