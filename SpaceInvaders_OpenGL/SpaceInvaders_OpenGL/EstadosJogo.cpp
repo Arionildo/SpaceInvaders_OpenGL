@@ -1,3 +1,7 @@
+/**
+	@author		Leonardo Schmitt
+	@version	1.0 28/04/16
+*/
 #include "EstadosJogo.h"
 
 EstadosJogo::EstadosJogo()
@@ -7,7 +11,7 @@ EstadosJogo::EstadosJogo()
 	jogo = false;
 	novoJogo = "New Game";
 	sairJogo = "Quit Game";
-	continuar = "Continuar";
+	continuar = "Continue";
 	tituloJogo = "Square Invaders";
 	setaSelecao = "->";
 	_gameOver = "You Lose!";
@@ -20,7 +24,10 @@ void EstadosJogo::Texto(const char *text, int length, int x, int y)
 	double *matrix = new double[16];
 	glGetDoublev(GL_PROJECTION_MATRIX, matrix);
 	glLoadIdentity();
+	
+	//TODO 01: Criar uma classe que contenha as configurações globais do jogo, tais como o tamanho da janela para o "gluOrtho2D".
 	gluOrtho2D(0, 800, 0, 600);
+	
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glPushMatrix();
@@ -63,10 +70,10 @@ void EstadosJogo::menu()
 {
 	glColor3f(0.0, 0.0, 0.0);
 	glBegin(GL_QUADS);
-	glVertex2f(-5, -5); //Inferior Esquerdo
-	glVertex2f(-5, 5); //Superior Esquerdo
-	glVertex2f(5, 5);  //Superior Direito
-	glVertex2f(5, -5);  //Inferior Direito
+	glVertex2f(-5.0, -5.0); //Inferior Esquerdo
+	glVertex2f(-5.0, 5.0); //Superior Esquerdo
+	glVertex2f(5.0, 5.0);  //Superior Direito
+	glVertex2f(5.0, -5.0);  //Inferior Direito
 	glEnd();
 
 	glColor3f(1.0, 1.0, 1.0);
@@ -89,10 +96,10 @@ void EstadosJogo::gameOver()
 
 	glColor3f(0.0, 0.0, 0.0);
 	glBegin(GL_QUADS);
-	glVertex2f(-5, -5); //Inferior Esquerdo
-	glVertex2f(-5, 5); //Superior Esquerdo
-	glVertex2f(5, 5);  //Superior Direito
-	glVertex2f(5, -5);  //Inferior Direito
+	glVertex2f(-5.0, -5.0); //Inferior Esquerdo
+	glVertex2f(-5.0, 5.0); //Superior Esquerdo
+	glVertex2f(5.0, 5.0);  //Superior Direito
+	glVertex2f(5.0, -5.0);  //Inferior Direito
 	glEnd();
 
 	glColor3f(1.0, 1.0, 1.0);
