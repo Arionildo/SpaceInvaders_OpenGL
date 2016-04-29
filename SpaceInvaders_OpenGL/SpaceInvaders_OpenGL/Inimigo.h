@@ -1,3 +1,7 @@
+/**
+	@author		Arionildo Escouto e Leonardo Schmitt
+	@version	1.0 28/04/16
+*/
 #pragma once
 #include "GL\glew.h"
 #include "GL\freeglut.h"
